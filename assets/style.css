@@ -1,7 +1,32 @@
+/* Definições de Tags */
 * {
     box-sizing: border-box;
 }
 
+html {
+    font-size: 14px;
+    height: 100%;
+}
+
 body {
     font-family: 'Teko', sans-serif;
+}
+
+/* classes utilitarias */
+
+/* classes do projeto */
+.headerMain {
+    background-color: black;
+    color: white;
+    padding: 1rem;
+}
+
+.headerMain .logo {
+    font-size: 2rem;
+}
+
+.footerMain {
+    background-color: black;
+    color: white;
+    padding: 1rem;
 }
