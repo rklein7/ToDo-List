@@ -9,7 +9,12 @@ html {
 }
 
 body {
+    background-color: purple;
+    display: flex;
+    flex-direction: column;
     font-family: 'Teko', sans-serif;
+    height: 100%;
+
 }
 
 /* classes utilitarias */
@@ -25,8 +30,13 @@ body {
     font-size: 2rem;
 }
 
+.mainContent {
+    flex-grow: 1;
+}
+
 .footerMain {
     background-color: black;
     color: white;
     padding: 1rem;
 }
+
