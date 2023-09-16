@@ -10,31 +10,31 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
+    
     <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300;400&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class = "headerMain">
-        <h1 class = "logo">
+    <header class="headerMain">
+        <h1 class="logo">
             ToDo List
         </h1>
     </header>
 
-    <main class = "mainContent">
-        
-        <div class = "formAddTaskContainer">   
-            <form class = form-vertical" id = "frmTask" autocomplete="off"></form>
-                <label for="txtTaskTitle">Titulo da Task:</label>
+    <main class="mainContent">
+        <div class="formAddTaskContainer">
+            <form class="form-vertical" id="frmTask" autocomplete="off">
+                <label for="txtTaskTitle">Título da Task:</label>
                 <input 
-                type="text" 
-                name="txtTaskTitle" 
-                id="txtTaskTitle" 
-                placeholder="Adicione o título da task" 
-                minlength="5" 
-                maxlength="60" 
-                required 
-                autofocus
+                    type="text" 
+                    name="txtTaskTitle" 
+                    id="txtTaskTitle" 
+                    placeholder="Adicione o título da task" 
+                    minlength="5" 
+                    maxlength="60" 
+                    required 
+                    autofocus
                 >
+
                 <label for="txtTaskDescription">Descrição da Task</label>
                 <input type="text" name="txtTaskDescription" id="txtTaskDescription" placeholder="Insira uma descrição" maxlength="80">
                 
@@ -50,13 +50,10 @@
         </div>
     </main>
 
-        </div>
-    </main>
-
-    <footer class = "footerMain">
-        Desenvolvido por Rafael Augusto Klein
+    <footer class="footerMain">
+        Desenvolvido por Jaison Schmidt
     </footer>
-    
+
     <script src="assets/script.js"></script>
 </body>
 </html>

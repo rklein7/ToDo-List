@@ -1,4 +1,4 @@
-/* Definições de Tags */
+/* definições de TAGs */
 * {
     box-sizing: border-box;
 }
@@ -9,20 +9,43 @@ html {
 }
 
 body {
-    background-color: purple;
+    background-color:purple;
     display: flex;
     flex-direction: column;
     font-family: 'Teko', sans-serif;
     height: 100%;
-
 }
 
-/* classes utilitarias */
+/* classes utilitárias */
+.btn {
+    background-color: #A0CED9;
+    border: 1px solid #000;
+    border-radius: 0.2rem;
+    margin-top: 0.4rem;
+    padding: 0.6rem;
+}
+
+.m-t-1 {
+    margin-top: 1rem;
+}
+
+.form-vertical {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-vertical label {
+    margin: 1rem 0 0.5rem 0;
+}
+
+.form-vertical input {
+    padding: 1rem;
+}
 
 /* classes do projeto */
 .headerMain {
-    background-color: black;
-    color: white;
+    background-color: #000;
+    color: #FFF;
     padding: 1rem;
 }
 
@@ -31,12 +54,22 @@ body {
 }
 
 .mainContent {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
     flex-grow: 1;
 }
 
-.footerMain {
-    background-color: black;
-    color: white;
-    padding: 1rem;
+.formAddTaskContainer {
+    background-color: #FFF;
+    margin-top: 2rem;
+    max-width: 840px;
+    padding: 2rem;
+    width: 100%;
 }
 
+.footerMain {
+    background-color: #000;
+    color: #FFF;
+    padding: 1rem;
+}
