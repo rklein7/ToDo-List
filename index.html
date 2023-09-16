@@ -20,7 +20,38 @@
         </h1>
     </header>
 
-    <main class = "mainContent"></main>
+    <main class = "mainContent">
+        
+        <div class = "formAddTaskContainer">   
+            <form class = form-vertical" id = "frmTask" autocomplete="off"></form>
+                <label for="txtTaskTitle">Titulo da Task:</label>
+                <input 
+                type="text" 
+                name="txtTaskTitle" 
+                id="txtTaskTitle" 
+                placeholder="Adicione o título da task" 
+                minlength="5" 
+                maxlength="60" 
+                required 
+                autofocus
+                >
+                <label for="txtTaskDescription">Descrição da Task</label>
+                <input type="text" name="txtTaskDescription" id="txtTaskDescription" placeholder="Insira uma descrição" maxlength="80">
+                
+                <input type="hidden" name="action" value="NEW_TASK" id="frmAction">
+                <input type="hidden" name="frmTaskId" value="" id="frmTaskId">
+
+                <div class="m-t-1">
+                    <button type="submit" class="btn">
+                        Cadastrar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+        </div>
+    </main>
 
     <footer class = "footerMain">
         Desenvolvido por Rafael Augusto Klein
