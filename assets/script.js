@@ -2,6 +2,7 @@
 const tasks = [];
 const taskListElement = document.getElementById("taskListElement")
 const emptyTaskListElement = document.getElementById("emptyTaskListElement")
+const frmTask = document.getElementById("frmTask")
 
 function newId() {
     return Math.floor(Math.random()*1000);  /*Gera um ID entre 0 e 999 aleatorio p/ cada task nova*/
@@ -66,6 +67,16 @@ function renderTasks(listElement = taskListElement, emptyMessage = emptyTaskList
    
     listElement.innerHTML = finalHtml;
 }
+
+frmTask.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    if(frmTask.frmAction.value === "NEW_TASK") {
+        createTask(frmTask.txtTaskTitle.value, frmTask.txtTaskDescription.value);
+        frmTask.reset();
+        return;
+    }
+})
 
 
 renderTasks()
