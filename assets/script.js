@@ -1,21 +1,22 @@
-/* armazena todas as tarefas cadastradas */
+// armazena todas as tarefas cadastradas
 const tasks = [];
-const taskListElement = document.getElementById("taskListElement")
-const emptyTaskListElement = document.getElementById("emptyTaskListElement")
-const frmTask = document.getElementById("frmTask")
+const taskListElement = document.getElementById("taskListElement");
+const emptyTaskListElement = document.getElementById("emptyTaskListElement");
+const frmTask = document.getElementById('frmTask');
 
 function newId() {
-    return Math.floor(Math.random()*1000);  /*Gera um ID entre 0 e 999 aleatorio p/ cada task nova*/
+    return Math.floor(Math.random() * 1000); // Gerar IDs entre 0 e 999
 }
 
-function createTask(taskTittle, taskDescription = ""){
+function createTask(taskTitle, taskDescription = "") {
     let id = newId();
     let task = {
         id,
-        taskTittle,
+        taskTitle,
         taskDescription,
     }
-    tasks.push(task); // adiciona a task no array
+    tasks.push(task);
+    renderTasks();
     return task;
 }
 
@@ -28,6 +29,42 @@ function deleteTask(taskId) {
     tasks.splice(taskIndex, 1);
 
     renderTasks();
+}
+
+function updateTask(task = {}) {
+    try {
+        const taskIndex = getIndexByTaskId(task.id);
+
+        tasks[taskIndex] = {
+            ...tasks[taskIndex],
+            ...task,
+        };
+
+        // reseta o campo
+        frmTask.frmAction.value = 'NEW_TASK';
+        renderTasks();
+        return tasks[taskIndex];
+    } catch (e) {
+        console.log(e);
+        return undefined;
+    }
+}
+
+function renderFormUpdate(taskId = -1) {
+    try {
+        const taskIndex = getIndexByTaskId(taskId);
+        const task = tasks[taskIndex];
+
+        frmTask.frmTaskId.value = task.id;
+        frmTask.txtTaskTitle.value = task.taskTitle;
+        frmTask.txtTaskDescription.value = task.taskDescription;
+        frmTask.frmAction.value = 'UPDATE_TASK';
+
+        frmTask.txtTaskTitle.focus();
+    } catch (e) {
+        console.log(e);
+        alert("Erro ao editar task");
+    }
 }
 
 function renderTasks(listElement = taskListElement, emptyMessage = emptyTaskListElement) {
@@ -76,10 +113,14 @@ frmTask.addEventListener('submit', function(event) {
         frmTask.reset();
         return;
     }
+
+    updateTask({
+        id: frmTask.frmTaskId.value, 
+        taskTitle: frmTask.txtTaskTitle.value, 
+        taskDescription: frmTask.txtTaskDescription.value
+    });
+
+    frmTask.reset();
 })
 
-
-renderTasks()
-
-
-
+renderTasks();
